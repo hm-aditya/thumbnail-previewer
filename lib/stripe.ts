@@ -25,10 +25,7 @@ export const getStripeSession = async ({
         quantity: 1,
       },
     ],
-    customer_update: {
-      name: "auto",
-      address: "auto",
-    },
+    customer_update: { name: "auto", address: "auto" },
     success_url: `${domainUrl}/payment/success`,
     cancel_url: `${domainUrl}/payment/cancel`,
   });
