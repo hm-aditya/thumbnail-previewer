@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
 import { ModeToggle } from "./theme-toggle";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/clerk-react";
 
 export function Navbar() {
-  const isSigned = true;
+const {isSignedIn} = useUser();
   return (
     <nav className="bg-background border-b">
       <div className="max-w-7xl mx-auto h-16 text-lg flex justify-between items-center">
@@ -12,7 +12,7 @@ export function Navbar() {
           Thumbnail Previewer
         </Link>
         <div>
-          {isSigned ? (
+          {isSignedIn ? (
             <>
               <Link href="/dashboard" className="p-2 font-medium ">
                 Product
