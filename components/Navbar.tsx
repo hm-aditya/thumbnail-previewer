@@ -6,7 +6,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/c
 export function Navbar() {
 const {isSignedIn} = useUser();
   return (
-    <nav className="bg-background border-b">
+    <nav className="bg-background border-b sticky backdrop:blur-lg ">
       <div className="max-w-7xl mx-auto h-16 text-lg flex justify-between items-center">
         <Link href="/" className="p-2 font-medium tracking-tight">
           Thumbnail Previewer
